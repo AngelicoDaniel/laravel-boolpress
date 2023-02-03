@@ -1,4 +1,4 @@
-@extends('layouts.dashboard')
+ @extends('layouts.dashboard')
 @section('content')
     <div class="text-center">
         <h1>Crea un post</h1>
