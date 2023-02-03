@@ -1,6 +1,12 @@
 <template>
     <div>
-        <h1>tag</h1>
+        <div v-for="elem in tag" :key="elem">
+            <ul>
+                <li v-for="post in elem.posts" :key="post">
+                    {{ post.title }}
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -13,7 +19,7 @@ name: 'TagCard',
 
 data(){
     return{
-        tag: null,
+        tag: [],
     }
 },
 mounted(){

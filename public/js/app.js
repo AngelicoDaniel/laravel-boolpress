@@ -2052,7 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'TagCard',
   data: function data() {
     return {
-      tag: null
+      tag: []
     };
   },
   mounted: function mounted() {
@@ -2526,13 +2526,17 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _vm._m(0);
+  return _c("div", _vm._l(_vm.tag, function (elem) {
+    return _c("div", {
+      key: elem
+    }, [_c("ul", _vm._l(elem.posts, function (post) {
+      return _c("li", {
+        key: post
+      }, [_vm._v("\n                " + _vm._s(post.title) + "\n            ")]);
+    }), 0)]);
+  }), 0);
 };
-var staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c("div", [_c("h1", [_vm._v("tag")])]);
-}];
+var staticRenderFns = [];
 render._withStripped = true;
 
 
