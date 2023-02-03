@@ -39,7 +39,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::With('category', 'tags',)->find($id);
+        $post = Post::OrderBy('id', 'DESC')->with('category', 'tags',)->find($id);
         if(!$post) return response('Post non trovato', 404);
 
         return response()->json($post);

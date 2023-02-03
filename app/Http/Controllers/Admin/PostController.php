@@ -23,7 +23,7 @@ class PostController extends Controller
     public function index()
     {
         $data = [
-            'posts' => Post::with('category')->paginate(10)
+            'posts' => Post::OrderBy('id', 'DESC')->with('category', 'tags')->paginate(10)
         ];
 
 
