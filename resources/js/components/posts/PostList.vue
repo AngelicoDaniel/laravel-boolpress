@@ -51,7 +51,7 @@ export default {
         getPosts(page = 1){
             this.isLoading = true
             axios.get('http://127.0.0.1:8000/api/posts?page=' + page)
-                .then(res => {
+                .then((res) => {
                     console.log(res.data);
                     // this.posts = res.data.data
 
