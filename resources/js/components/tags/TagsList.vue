@@ -4,7 +4,7 @@
 
         <ul v-else-if="tags.length">
             <li v-for="elem in tags" :key="elem.id">
-                <router-link :to="`/tags/${elem.id}`">
+                <router-link :to="`/tags/${elem.name}`">
                     {{ elem.name }}
                 </router-link>
             </li>

@@ -25,4 +25,5 @@ Route::namespace('Api')->prefix('/posts')->group(function(){
 
 Route::namespace('Api')->prefix('/tags')->group(function(){
     Route::get('/', 'TagsController@index');
+    Route::get('/{name}', 'TagsController@show');
 });
