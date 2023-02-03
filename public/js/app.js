@@ -2052,18 +2052,18 @@ __webpack_require__.r(__webpack_exports__);
   name: 'TagCard',
   data: function data() {
     return {
-      post: null
+      tag: null
     };
   },
   mounted: function mounted() {
-    this.getPost();
+    this.getTag();
   },
   methods: {
-    getPost: function getPost() {
+    getTag: function getTag() {
       var _this = this;
       axios.get('http://127.0.0.1:8000/api/tags/' + this.$route.params.name).then(function (res) {
         console.log(res.data);
-        _this.post = res.data;
+        _this.tag = res.data;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -2526,9 +2526,13 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("h1", [_vm._v(_vm._s(_vm.tag.name))])]);
+  return _vm._m(0);
 };
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c("div", [_c("h1", [_vm._v("tag")])]);
+}];
 render._withStripped = true;
 
 
@@ -2696,7 +2700,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_c("h1", [_vm._v("tag detals")]), _vm._v(" "), _c("TagCard")], 1);
+  return _c("div", [_c("h1", [_vm._v("tag: " + _vm._s(this.$route.params.name))]), _vm._v(" "), _c("TagCard")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

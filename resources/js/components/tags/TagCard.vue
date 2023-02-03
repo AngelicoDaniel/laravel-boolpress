@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>{{ tag.name }}</h1>
+        <h1>tag</h1>
     </div>
 </template>
 
@@ -13,18 +13,18 @@ name: 'TagCard',
 
 data(){
     return{
-        post: null,
+        tag: null,
     }
 },
 mounted(){
-    this.getPost();
+    this.getTag();
 },
 methods: {
-    getPost(){
+    getTag(){
         axios.get('http://127.0.0.1:8000/api/tags/' + this.$route.params.name)
             .then(res => {
                 console.log(res.data);
-                this.post = res.data;
+                this.tag = res.data;
 
             }).catch(err =>{
                 console.log(err)

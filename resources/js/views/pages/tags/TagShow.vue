@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>tag detals</h1>
+        <h1>tag: {{ this.$route.params.name }}</h1>
         <TagCard/>
     </div>
 </template>
