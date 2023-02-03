@@ -7,17 +7,17 @@
                     <router-link :to="`/posts/${elem.id}`">
                         {{ elem.title }}
                     </router-link>
+                    <span v-if="elem.category">
+                        {{ elem.category.name }}
+                    </span>
+                    <ol>
+                        <li v-for="tag in elem.tags" :key="tag">
+                            {{ tag.name }}
+                        </li>
+                    </ol>
                 </li>
 
-                <!-- <span v-if="elem.category">
-                    {{ elem.category.name }}
-                </span> -->
 
-                <!-- <ol>
-                    <li v-for="tag in elem.tags" :key="tag">
-                        {{ tag.name }}
-                    </li>
-                </ol> -->
             </ul>
             <p v-else>Non ci sono post nel DB</p>
 
