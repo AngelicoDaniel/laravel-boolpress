@@ -17,38 +17,34 @@
 
 <script>
 import Loader from '../Loader.vue'
-
-
 export default {
-name: 'TagsList',
-components: {
-    Loader
-},
-data(){
-    return{
-        tags: [],
-        isLoading: false,
+    name: 'TagsList',
+    components: {
+        Loader,
+    },
+    data() {
+        return {
+            tags: [],
+            isLoading: false,
+        }
+    },
+    mounted() {
+        this.getTags();
+    },
+    methods: {
+        getTags() {
+            this.isLoading = true
+            axios.get('http://127.0.0.1:8000/api/tags')
+                .then((res) => {
+                    console.log(res.data);
+                    this.tags = res.data;
+                }).catch(err => {
+                    console.log(err)
+                }).then(() => {
+                    this.isLoading = false
+                })
+        }
     }
-},
-mounted(){
-    this.getTags();
-},
-methods: {
-    getTags(){
-        this.isLoading = true
-        axios.get('http://127.0.0.1:8000/api/tags')
-            .then((res) => {
-                console.log(res.data);
-
-                this.tags = data;
-
-            }).catch(err => {
-                console.log(err)
-            }).then(() => {
-                this.isLoading = false
-            })
-    }
-}
 }
 </script>
 

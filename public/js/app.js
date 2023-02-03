@@ -2070,7 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
       this.isLoading = true;
       axios.get('http://127.0.0.1:8000/api/tags').then(function (res) {
         console.log(res.data);
-        _this.tags = data;
+        _this.tags = res.data;
       })["catch"](function (err) {
         console.log(err);
       }).then(function () {
